@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Peserta - Haflah Akhirossanah & Khotmul Qur'an</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="main-peserta">
+    <!-- Audio Control -->
+    <div class="audio-control">
+        <button id="audioButton" class="audio-button">
+            <i class="fas fa-music"></i>
+        </button>
+    </div>
+    <audio id="bgMusic" preload="auto">
+        <source src="assets/sound/sound.mp3" type="audio/mp3">
+    </audio>
+     <!-- Ornaments -->
+     <div class="ornament ornament-top-left"></div>
+     <div class="ornament ornament-top-right"></div>
+     <div class="ornament ornament-bottom-left"></div>
+     <div class="ornament ornament-bottom-right"></div>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="text-center mb-5" data-aos="fade-down">
+                    <h1 class="section-title">Khotimin & Khotimat</h1>
+                    <h2 class="subtitle">Pondok Pesantren Nurul Asna<br>Tahun 1446 H / 2025 M</h2>
+                </div>
+                <div class="participants-section" data-aos="fade-up">
+                    <div class="participants-list">
+                        <ol>
+                            <li data-aos="fade-right" data-aos-delay="100">Muhammad Ali Fathoni</li>
+                            <li data-aos="fade-right" data-aos-delay="150">Muhammad Isa Daud</li>
+                            <li data-aos="fade-right" data-aos-delay="200">Muhammad Syarifuddin Hidayatullah</li>
+                            <li data-aos="fade-right" data-aos-delay="250">Muhammad Aditya Riyansyah</li>
+                            <li data-aos="fade-right" data-aos-delay="300">Muhammad Rohidil Mu'iz</li>
+                            <li data-aos="fade-right" data-aos-delay="350">Muhammad Tajul Falah</li>
+                            <li data-aos="fade-right" data-aos-delay="400">Syahli Izul Fikri</li>
+                            <li data-aos="fade-right" data-aos-delay="450">Durrin Naja</li>
+                            <li data-aos="fade-right" data-aos-delay="500">Ahmad Fahril</li>
+                            <li data-aos="fade-right" data-aos-delay="550">Jindan Ubaidillah</li>
+                            <li data-aos="fade-right" data-aos-delay="600">Dafa Rahmat Ilham Arramadhani</li>
+                            <li data-aos="fade-left" data-aos-delay="100">Intan Wulandari</li>
+                            <li data-aos="fade-left" data-aos-delay="150">Zahratun Navisha</li>
+                            <li data-aos="fade-left" data-aos-delay="200">Fathimatuz Zahra</li>
+                            <li data-aos="fade-left" data-aos-delay="250">Maslachatul Ummah</li>
+                            <li data-aos="fade-left" data-aos-delay="300">Romaniatul Azizah</li>
+                            <li data-aos="fade-left" data-aos-delay="350">Zahroh Vicry Maemunah</li>
+                            <li data-aos="fade-left" data-aos-delay="400">Nadia Avita Sari</li>
+                            <li data-aos="fade-left" data-aos-delay="450">Eka Setyaningsih</li>
+                            <li data-aos="fade-left" data-aos-delay="500">Intan Ely Mahira</li>
+                            <li data-aos="fade-left" data-aos-delay="550">Ummi Kulsum</li>
+                            <li data-aos="fade-left" data-aos-delay="600">Raysha Ramania Early</li>
+                            <li data-aos="fade-left" data-aos-delay="650">Aprilia Putri Ayu</li>
+                            <li data-aos="fade-left" data-aos-delay="700">Fika Izza Malikha</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="nav-buttons mt-5" data-aos="fade-up" data-aos-delay="300">
+                    <a href="main_pembuka.html" class="nav-button">
+                        <i class="fas fa-home button-icon"></i>
+                    </a>
+                    <a href="main_rundown.html" class="nav-button">
+                        <i class="fas fa-list-ul button-icon"></i>
+                    </a>
+                    <a href="main_peserta.html" class="nav-button">
+                        <i class="fas fa-users button-icon"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/audio-control.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+</body>
+</html>

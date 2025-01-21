@@ -1,0 +1,2701 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Amiri:ital@0;1&display=swap');
+
+:root {
+    --gradient-dark: #8B4513;  /* Saddle Brown */
+    --gradient-light: #DAA520; /* Goldenrod */
+    --primary-color: #000000;     /* Pure Black */
+    --accent-color: #996515;   /* Golden Brown */
+    --bg-color: #FFF8E7;       /* Antique White */
+    --text-color: #333; /* Color Variable */
+}
+
+/* Latar Belakang Utama */
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background: linear-gradient(135deg, 
+        var(--gradient-dark),
+        var(--gradient-light),
+        var(--gradient-dark));
+    min-height: 100vh;
+    position: relative;
+    background-color: var(--bg-color);
+}
+
+/* Marble Background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/marble.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Container Styles */
+.container {
+    max-width: 100%;
+    min-height: 100vh;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    padding-bottom: 80px !important;
+}
+
+/* Container Padding Styles */
+.container.py-5 {
+    padding: 3rem 2rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 100px);
+}
+
+.container.py-5 > * {
+    width: 100%;
+    text-align: center;
+}
+
+/* Responsive Container Styles */
+@media (max-width: 1200px) {
+    .container.py-5 {
+        padding: 2.5rem !important;
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container.py-5 {
+        padding: 2rem !important;
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container.py-5 {
+        padding: 1.8rem !important;
+        max-width: 100%;
+        min-height: calc(100vh - 80px);
+    }
+}
+
+@media (max-width: 576px) {
+    .container.py-5 {
+        padding: 1.5rem !important;
+        min-height: calc(100vh - 70px);
+    }
+}
+
+@media (max-width: 360px) {
+    .container.py-5 {
+        padding: 1.2rem !important;
+        min-height: calc(100vh - 60px);
+    }
+}
+
+/* Handle landscape orientation */
+@media (max-height: 600px) and (orientation: landscape) {
+    .container.py-5 {
+        padding: 1.5rem !important;
+        min-height: auto;
+    }
+}
+
+/* Ensure bottom padding for navigation */
+.container.py-5:last-of-type {
+    padding-bottom: calc(3rem + 80px) !important;
+}
+
+@media (max-width: 768px) {
+    .container.py-5:last-of-type {
+        padding-bottom: calc(1.8rem + 70px) !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .container.py-5:last-of-type {
+        padding-bottom: calc(1.5rem + 60px) !important;
+    }
+}
+
+/* Ensure text content has proper spacing */
+.container.py-5 p {
+    margin-bottom: 1rem;
+    max-width: 100%;
+}
+
+@media (max-width: 576px) {
+    .container.py-5 p {
+        margin-bottom: 0.8rem;
+    }
+}
+
+/* Center all direct children of container */
+.container.py-5 > div,
+.container.py-5 > section,
+.container.py-5 > article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Fix for nested flex containers */
+.container.py-5 .row {
+    width: 100%;
+    justify-content: center;
+}
+
+/* Ensure images are responsive and centered */
+.container.py-5 img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* Logo Section Styles */
+.logo-section {
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: fadeInDown 1.5s ease-out;
+}
+
+.logo-img {
+    width: 120px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    animation: shine 1.5s ease-out infinite;
+}
+
+@keyframes shine {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 245, 196, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(255, 245, 196, 0.7);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(255, 245, 196, 0.7);
+    }
+}
+
+/* Hero Section Styles */
+.hero-section {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, 
+        rgba(210, 184, 127, 0.95),
+        rgba(255, 245, 196, 0.95));
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    animation: fadeIn 2s ease-out;
+    width: 90%;
+    max-width: 600px;
+}
+
+.hero-content {
+    padding: 1.5rem;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: #4A3728;
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.hero-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.4rem;
+    color: var(--accent-color);
+    margin-bottom: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #4A3728;
+    margin-bottom: 1.0rem;
+    font-weight: 700;
+    line-height: 1.3;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.hero-date {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #4A3728;
+    font-weight: 700;
+    line-height: 1.3;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+/* Button Styles */
+.button-wrapper {
+    margin-top: 4rem;
+}
+
+.open-button {
+    background: linear-gradient(135deg, var(--gradient-dark), var(--gradient-light));
+    color:    rgba(255, 245, 196, 0.95);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.open-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.2)
+    );
+    transform: skewX(-25deg);
+    transition: all 0.5s ease;
+}
+
+.open-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.open-button:hover::before {
+    left: 100%;
+}
+
+.open-button:hover .button-icon {
+    transform: rotate(360deg);
+}
+
+.button-icon {
+    transition: transform 0.5s ease;
+    position: relative;
+    z-index: 2;
+    font-size: 1.2rem;
+    color: rgba(255, 245, 196, 0.95);
+    transition: all 0.3s ease;
+}
+
+.open-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Ornament Styles */
+.ornament {
+    position: fixed;
+    width: 250px;
+    height: 250px;
+    background-image: url('assets/ornament.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.8;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.ornament-top-left {
+    top: -80px;
+    left: 1px;
+    transform: rotate(0deg);
+}
+
+.ornament-top-right {
+    top: 1px;
+    right: -90px;
+    transform: rotate(90deg);
+}
+
+.ornament-bottom-left {
+    bottom: 1px;
+    left: -90px;
+    transform: rotate(270deg);
+}
+
+.ornament-bottom-right {
+    bottom: -80px;
+    right: 1px;
+    transform: rotate(180deg);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Main Pembuka Styles */
+.main-pembuka {
+    background: linear-gradient(135deg, 
+        var(--gradient-dark),
+        var(--gradient-light),
+        var(--gradient-dark));
+    min-height: 100vh;
+    color: var(--bg-color);
+}
+
+.main-pembuka::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/marble.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Ornament positioning for responsive screens */
+@media (max-width: 768px) {
+    .ornament {
+        width: 100px;
+        height: 100px;
+        opacity: 0.6;
+    }
+
+    .ornament-top-left {
+        top: 70px;
+        left: -30px;
+    }
+
+    .ornament-top-right {
+        top: 70px;
+        right: -30px;
+    }
+
+    .ornament-bottom-left {
+        bottom: 10px;
+        left: -30px;
+    }
+
+    .ornament-bottom-right {
+        bottom: 10px;
+        right: -30px;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero-section {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+@media (max-width: 576px) {
+    .ornament {
+        width: 80px;
+        height: 80px;
+        opacity: 0.5;
+    }
+
+    .ornament-top-left {
+        top: 60px;
+        left: -20px;
+    }
+
+    .ornament-top-right {
+        top: 60px;
+        right: -20px;
+    }
+
+    .ornament-bottom-left {
+        bottom: 5px;
+        left: -20px;
+    }
+
+    .ornament-bottom-right {
+        bottom: 5px;
+        right: -20px;
+    }
+}
+
+@media (max-width: 360px) {
+    .ornament {
+        width: 60px;
+        height: 60px;
+        opacity: 0.4;
+    }
+
+    .ornament-top-left {
+        top: 50px;
+        left: -15px;
+    }
+
+    .ornament-top-right {
+        top: 50px;
+        right: -15px;
+    }
+
+    .ornament-bottom-left {
+        bottom: 0;
+        left: -15px;
+    }
+
+    .ornament-bottom-right {
+        bottom: 0;
+        right: -15px;
+    }
+}
+
+/* Ensure content is always above ornaments */
+.container, 
+.hero-section, 
+.greeting-section, 
+.event-details, 
+.participants-section, 
+.rundown-section {
+    position: relative;
+    z-index: 2;
+}
+
+.ornament {
+    z-index: 1;
+}
+
+.greeting-section {
+    background: linear-gradient(135deg, 
+        rgba(210, 184, 127, 0.95),
+        rgba(255, 245, 196, 0.95));
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.arabic-greeting {
+    font-family: 'Amiri', serif;
+    font-size: 2.5rem;
+    color: #4A3728;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out 0.2s forwards;
+}
+
+.greeting-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: #4A3728;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out 0.4s forwards;
+}
+
+.event-details {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    margin: 2rem 0;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out 0.6s forwards;
+}
+
+.event-date {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #4A3728;
+    margin: 1.5rem 0;
+    font-weight: 600;
+    line-height: 1.6;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out 0.8s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.countdown-section {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 2rem;
+    border-radius: 15px;
+    margin: 2rem 0;
+    animation: fadeIn 1s ease-out, shimmer 3s infinite linear;
+}
+
+.countdown-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #4A3728;
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    animation: slideInFromLeft 1.5s ease-out, colorChange 5s infinite;
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+    padding: 1.5rem;
+    background: linear-gradient(45deg, rgba(139, 69, 19, 0.1), rgba(218, 165, 32, 0.1));
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 1s ease-out, floatEffect 4s infinite alternate;
+}
+
+.countdown-item {
+    text-align: center;
+    min-width: 90px;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease;
+    animation: zoomIn 1.5s ease-out, glowPulse 2s infinite;
+}
+
+.countdown-item:hover {
+    transform: scale(1.05);
+}
+
+.countdown-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--gradient-light);
+    background: transparent;
+    padding: 0.5rem;
+    margin-bottom: 0.7rem;
+    animation: textShine 3s linear infinite;
+}
+
+.countdown-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: #4A3728;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: fadeInOut 2s infinite alternate;
+}
+
+@keyframes floatEffect {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+@keyframes glowPulse {
+    0% { box-shadow: 0 0 5px rgba(218, 165, 32, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(218, 165, 32, 0.8); }
+    100% { box-shadow: 0 0 5px rgba(218, 165, 32, 0.5); }
+}
+
+@keyframes textShine {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+
+.time {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: #4A3728;
+    margin: 1.5rem 0;
+    font-weight: 600;
+}
+
+.location {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: #4A3728;
+    line-height: 1.6;
+}
+
+.guest-section {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.guest-section h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #3A2718;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.guest-section h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #DAA520;
+}
+
+.guest-photo-wrapper {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 1rem;
+    position: relative;
+}
+
+.guest-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: shine 2s ease-out infinite;
+}
+
+.guest-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    color: #4A3728;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+/* Navigation Styles */
+.nav-buttons {
+    position: fixed;
+    top: 12px;
+    left: 400px;
+    display: flex;
+    gap: 1.5rem;
+    z-index: 1000;
+}
+
+.nav-button {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--gradient-dark), var(--gradient-light));
+    border-radius: 50%;
+    color: rgba(255, 245, 196, 0.95);
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.button-icon {
+    position: relative;
+    z-index: 2;
+    font-size: 1.2rem;
+    color: rgba(255, 245, 196, 0.95);
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+    transform: translateX(3px) scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.nav-button:hover .button-icon {
+    transform: rotate(360deg);
+}
+
+.nav-button:active {
+    transform: translateX(1px) scale(0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Add ripple effect */
+.nav-button::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 70%);
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.nav-button:active::after {
+    transform: scale(2);
+    opacity: 0;
+    transition: 0s;
+}
+
+/* Responsive Navigation */
+@media (max-width: 992px) {
+    .nav-buttons {
+        top: auto;
+        left: auto;
+        bottom: 20px;
+        right: 50%;
+        transform: translateX(50%);
+        background: rgba(255, 255, 255, 0.95);
+        padding: 10px;
+        border-radius: 50px;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        gap: 1rem;
+    }
+
+    .nav-button {
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.9);
+    }
+
+    .button-icon {
+        font-size: 1.1rem;
+        color: var(--gradient-dark);
+    }
+
+    .nav-button:hover {
+        transform: translateY(-3px) scale(1.05);
+    }
+
+    .nav-button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, var(--gradient-dark), var(--gradient-light));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 1;
+    }
+
+    .nav-button:hover::before {
+        opacity: 1;
+    }
+
+    .nav-button:hover .button-icon {
+        color: #fff;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-buttons {
+        bottom: 15px;
+        padding: 8px;
+        gap: 0.8rem;
+    }
+
+    .nav-button {
+        width: 35px;
+        height: 35px;
+    }
+
+    .button-icon {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .nav-buttons {
+        bottom: 10px;
+        padding: 6px;
+        gap: 0.6rem;
+    }
+
+    .nav-button {
+        width: 32px;
+        height: 32px;
+    }
+
+    .button-icon {
+        font-size: 0.9rem;
+    }
+}
+
+/* Handle landscape orientation */
+@media (max-height: 600px) and (orientation: landscape) {
+    .nav-buttons {
+        right: 20px;
+        bottom: 20px;
+        transform: none;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 8px;
+    }
+
+    .nav-button {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Ensure content doesn't get hidden behind fixed navigation */
+.container {
+    padding-bottom: 80px !important;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding-bottom: 70px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding-bottom: 60px !important;
+    }
+}
+
+/* Rundown Page Styles */
+.main-rundown .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #8B4513;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+    letter-spacing: 1px;
+    text-decoration: underline;
+    text-decoration-color: rgba(139, 69, 19, 0.3);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 5px;
+}
+
+.main-rundown .title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #4A3728;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+    line-height: 1.3;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.rundown-section {
+    background: linear-gradient(135deg, 
+        rgba(210, 184, 127, 0.95),
+        rgba(255, 245, 196, 0.95));
+    padding: 2rem;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+
+.rundown-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #4A3728;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+    text-align: center;
+    width: 100%;
+}
+
+.rundown-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 50%;
+    height: 2px;
+    background: linear-gradient(to right, var(--gradient-dark), var(--gradient-light));
+    transform: translateX(-50%);
+}
+
+.rundown-time {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.rundown-list {
+    padding-left: 1rem;
+}
+
+.rundown-list ol {
+    list-style: none;
+    counter-reset: rundown-counter;
+    padding: 0;
+}
+
+.rundown-list ol li {
+    counter-increment: rundown-counter;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: #4A3728;
+    margin-bottom: 1rem;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.rundown-list ol li:hover {
+    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.rundown-list ol li::before {
+    content: counter(rundown-counter);
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, var(--gradient-dark), var(--gradient-light));
+    color: rgba(255, 245, 196, 0.95);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Participants Page Styles */
+.main-peserta .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #8B4513;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+    letter-spacing: 1px;
+    text-decoration: underline;
+    text-decoration-color: rgba(139, 69, 19, 0.3);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 5px;
+}
+
+.main-peserta .subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #4A3728;
+    margin-bottom: 3rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.participants-section {
+    background: linear-gradient(135deg, 
+        rgba(210, 184, 127, 0.95),
+        rgba(255, 245, 196, 0.95));
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.participants-list {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.participants-list ol {
+    list-style: none;
+    counter-reset: participant-counter;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.participants-list ol li {
+    counter-increment: participant-counter;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: #4A3728;
+    padding: 0.8rem 1.2rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    position: relative;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.participants-list ol li:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.participants-list ol li::before {
+    content: counter(participant-counter);
+    width: 24px;
+    height: 24px;
+    background: linear-gradient(135deg, var(--gradient-dark), var(--gradient-light));
+    color: rgba(255, 245, 196, 0.95);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-right: 0.8rem;
+    flex-shrink: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Responsive Styles for Index Page */
+@media (max-width: 1200px) {
+    .hero-content {
+        max-width: 90%;
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.8rem;
+    }
+
+    .hero-text {
+        font-size: 1.2rem;
+    }
+
+    .ornament {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-content {
+        max-width: 95%;
+        padding: 3rem 2rem;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.6rem;
+        margin: 1rem 0;
+    }
+
+    .hero-text {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+
+    .ornament {
+        width: 100px;
+        height: 100px;
+    }
+
+    .btn-primary {
+        padding: 0.8rem 2rem;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        padding: 2.5rem 1.5rem;
+        margin: 2rem auto;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.4rem;
+    }
+
+    .hero-text {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .ornament {
+        width: 80px;
+        height: 80px;
+    }
+
+    .ornament-top-left {
+        top: 10px;
+        left: 10px;
+    }
+
+    .ornament-top-right {
+        top: 10px;
+        right: 10px;
+    }
+
+    .ornament-bottom-left {
+        bottom: 10px;
+        left: 10px;
+    }
+
+    .ornament-bottom-right {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .btn-primary {
+        padding: 0.7rem 1.8rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-content {
+        padding: 2rem 1rem;
+        margin: 1.5rem auto;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 2.0rem;
+        margin: 0.8rem 0;
+    }
+
+    .hero-text {
+        font-size: 0.95rem;
+        margin-bottom: 1.2rem;
+        line-height: 1.5;
+    }
+
+    .ornament {
+        width: 180px;
+        height: 200px;
+    }
+
+    .ornament-top-left {
+        top: -70px;
+        left: 3px;
+    }
+
+    .ornament-top-right {
+        top: 3px;
+        right: -70px;
+    }
+
+    .ornament-bottom-left {
+        bottom: -10px;
+        left: -70px;
+    }
+
+    .ornament-bottom-right {
+        bottom: -70px;
+        right: 10px;
+    }
+
+
+    .btn-primary {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .glass-effect {
+        backdrop-filter: blur(8px);
+    }
+}
+
+@media (max-width: 360px) {
+    .hero-content {
+        padding: 1.5rem 0.8rem;
+        margin: 1rem auto;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+        margin: 0.6rem 0;
+    }
+
+    .hero-text {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    .ornament {
+        width: 100px;
+        height: 100px;
+    }
+
+    .btn-primary {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Handle landscape orientation */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero-content {
+        padding: 1.5rem;
+        margin: 1rem auto;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+        margin: 0.5rem 0;
+    }
+
+    .hero-text {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    .ornament {
+        width:100px;
+        height: 100px;
+    }
+}
+
+/* Responsive Styles for Main Pembuka Page */
+@media (max-width: 1200px) {
+    .main-pembuka .container {
+        max-width: 90%;
+    }
+
+    .arabic-greeting {
+        font-size: 3.5rem;
+    }
+
+    .greeting-text {
+        font-size: 1.3rem;
+    }
+
+    .event-details {
+        font-size: 1.3rem;
+    }
+
+    .countdown-container {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 992px) {
+    .arabic-greeting {
+        font-size: 3rem;
+    }
+
+    .greeting-text {
+        font-size: 1.2rem;
+    }
+
+    .event-details {
+        font-size: 1.2rem;
+    }
+
+    .countdown-item {
+        font-size: 2.5rem;
+    }
+
+    .countdown-label {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-pembuka .container {
+        padding: 2rem 1rem;
+    }
+
+    .arabic-greeting {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .greeting-text {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+
+    .greeting-text br {
+        display: none;
+    }
+
+    .event-details {
+        font-size: 1.1rem;
+        padding: 1.5rem;
+    }
+
+    .event-date {
+        font-size: 1.2rem;
+    }
+
+    .countdown-container {
+        padding: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .countdown-item {
+        font-size: 2rem;
+        padding: 1rem;
+    }
+
+    .countdown-label {
+        font-size: 0.9rem;
+    }
+
+    .nav-buttons {
+        margin-top: 2rem !important;
+    }
+
+    .nav-button {
+        width: 45px;
+        height: 45px;
+        margin: 0 0.5rem;
+    }
+
+    .button-icon {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-pembuka .container {
+        padding: 1.5rem 0.8rem;
+    }
+
+    .arabic-greeting {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .greeting-text {
+        font-size: 1rem;
+        padding: 0 0.5rem;
+    }
+
+    .event-details {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .event-date {
+        font-size: 1.1rem;
+    }
+
+    .countdown-container {
+        padding: 1rem;
+        margin-top: 1.5rem;
+        gap: 0.5rem;
+    }
+
+    .countdown-item {
+        font-size: 1.5rem;
+        padding: 0.8rem;
+        min-width: 70px;
+    }
+
+    .countdown-label {
+        font-size: 0.8rem;
+    }
+
+    .nav-buttons {
+        margin-top: 1.5rem !important;
+    }
+
+    .nav-button {
+        width: 40px;
+        height: 40px;
+        margin: 0 0.4rem;
+    }
+
+    .button-icon {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .arabic-greeting {
+        font-size: 1.8rem;
+    }
+
+    .greeting-text {
+        font-size: 0.9rem;
+    }
+
+    .event-details {
+        font-size: 0.9rem;
+    }
+
+    .event-date {
+        font-size: 1rem;
+    }
+
+    .countdown-container {
+        padding: 0.8rem;
+        gap: 0.3rem;
+    }
+
+    .countdown-item {
+        font-size: 1.3rem;
+        padding: 0.6rem;
+        min-width: 60px;
+    }
+
+    .countdown-label {
+        font-size: 0.75rem;
+    }
+
+    .nav-button {
+        width: 35px;
+        height: 35px;
+        margin: 0 0.3rem;
+    }
+}
+
+/* Handle landscape orientation */
+@media (max-height: 600px) and (orientation: landscape) {
+    .main-pembuka .container {
+        padding: 1rem;
+    }
+
+    .arabic-greeting {
+        font-size: 2rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .greeting-text {
+        font-size: 0.9rem;
+    }
+
+    .event-details {
+        padding: 1rem;
+    }
+
+    .countdown-container {
+        margin-top: 1rem;
+    }
+
+    .nav-buttons {
+        margin-top: 1rem !important;
+    }
+}
+
+/* Countdown Section Styles */
+.countdown-section {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.countdown-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--gradient-dark);
+    margin-bottom: 1.5rem;
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1.5rem 0;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
+}
+
+.countdown-value {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--gradient-light);
+    background: transparent;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+    min-width: 80px;
+}
+
+.countdown-label {
+    font-size: 1rem;
+    color: var(--gradient-light);
+}
+
+/* Time and Location Styles */
+.time {
+    font-size: 1.3rem;
+    color: var(--gradient-dark);
+    margin: 1.5rem 0;
+    font-weight: 600;
+}
+
+.location {
+    margin: 1.5rem 0;
+    padding: 0 1rem;
+}
+
+.location p {
+    font-size: 1.2rem;
+    color: var(--gradient-dark);
+    line-height: 1.6;
+}
+
+/* Guest Section Styles */
+.guest-section {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.guest-section h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--gradient-dark);
+    margin-bottom: 1.5rem;
+}
+
+.guest-photo-wrapper {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.guest-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.guest-name {
+    font-size: 1.3rem;
+    color: var(--gradient-dark);
+    margin-bottom: 2rem;
+    line-height: 1.4;
+}
+
+.arabic-greeting {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--gradient-dark);
+    margin-top: 2rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .countdown-title {
+        font-size: 1.8rem;
+    }
+
+    .countdown-container {
+        gap: 1.5rem;
+    }
+
+    .countdown-item {
+        min-width: 70px;
+    }
+
+    .countdown-value {
+        font-size: 2.2rem;
+        min-width: 70px;
+    }
+
+    .guest-section h4 {
+        font-size: 1.6rem;
+    }
+
+    .guest-photo-wrapper {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .countdown-title {
+        font-size: 1.6rem;
+    }
+
+    .countdown-container {
+        gap: 1rem;
+    }
+
+    .countdown-item {
+        min-width: 60px;
+    }
+
+    .countdown-value {
+        font-size: 1.8rem;
+        min-width: 60px;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .countdown-label {
+        font-size: 0.9rem;
+    }
+
+    .time {
+        font-size: 1.2rem;
+    }
+
+    .location p {
+        font-size: 1.1rem;
+    }
+
+    .guest-photo-wrapper {
+        width: 160px;
+        height: 160px;
+    }
+
+    .guest-name {
+        font-size: 1.2rem;
+    }
+
+    .arabic-greeting {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .countdown-title {
+        font-size: 1.4rem;
+    }
+
+    .countdown-container {
+        gap: 0.8rem;
+    }
+
+    .countdown-item {
+        min-width: 50px;
+    }
+
+    .countdown-value {
+        font-size: 1.5rem;
+        min-width: 50px;
+        padding: 0.3rem 0.6rem;
+    }
+
+    .countdown-label {
+        font-size: 0.8rem;
+    }
+
+    .time {
+        font-size: 1.1rem;
+    }
+
+    .location {
+        padding: 0 0.5rem;
+    }
+
+    .location p {
+        font-size: 1rem;
+    }
+
+    .guest-section h4 {
+        font-size: 1.4rem;
+    }
+
+    .guest-photo-wrapper {
+        width: 140px;
+        height: 140px;
+    }
+
+    .guest-name {
+        font-size: 1.1rem;
+    }
+
+    .arabic-greeting {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .countdown-container {
+        gap: 0.5rem;
+    }
+
+    .countdown-item {
+        min-width: 45px;
+    }
+
+    .countdown-value {
+        font-size: 1.3rem;
+        min-width: 45px;
+        padding: 0.2rem 0.4rem;
+    }
+
+    .countdown-label {
+        font-size: 0.75rem;
+    }
+
+    .guest-photo-wrapper {
+        width: 120px;
+        height: 120px;
+    }
+
+    .guest-name {
+        font-size: 1rem;
+    }
+
+    .arabic-greeting {
+        font-size: 1.4rem;
+    }
+}
+
+/* Handle landscape orientation */
+@media (max-height: 600px) and (orientation: landscape) {
+    .countdown-section {
+        margin: 1rem 0;
+    }
+
+    .guest-photo-wrapper {
+        width: 120px;
+        height: 120px;
+    }
+
+    .countdown-container {
+        margin: 1rem 0;
+    }
+
+    .location {
+        margin: 1rem 0;
+    }
+
+    .guest-section {
+        margin: 1.5rem 0;
+    }
+}
+
+/* Rundown Page Responsive Styles */
+@media (max-width: 992px) {
+    .main-rundown .section-title {
+        font-size: 2.2rem;
+    }
+
+    .main-rundown .title {
+        font-size: 1.8rem;
+        line-height: 1.4;
+    }
+
+    .rundown-title {
+        font-size: 1.6rem;
+    }
+
+    .rundown-time {
+        font-size: 1.2rem;
+    }
+
+    .rundown-list ol li {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-rundown .section-title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .main-rundown .title {
+        font-size: 1.6rem;
+        line-height: 1.3;
+    }
+
+    .rundown-section {
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+    }
+
+    .rundown-title {
+        font-size: 1.4rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .rundown-time {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+
+    .rundown-list ol {
+        padding-left: 1.5rem;
+    }
+
+    .rundown-list ol li {
+        font-size: 1rem;
+        margin-bottom: 0.7rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-rundown .section-title {
+        font-size: 1.8rem;
+    }
+
+    .main-rundown .title {
+        font-size: 1.4rem;
+        line-height: 1.3;
+        padding: 0 0.5rem;
+    }
+
+    .rundown-section {
+        margin-bottom: 1.5rem;
+        padding: 1.2rem;
+    }
+
+    .rundown-title {
+        font-size: 1.3rem;
+    }
+
+    .rundown-time {
+        font-size: 1rem;
+    }
+
+    .rundown-list ol {
+        padding-left: 1.2rem;
+    }
+
+    .rundown-list ol li {
+        font-size: 0.95rem;
+        margin-bottom: 0.6rem;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 360px) {
+    .main-rundown .section-title {
+        font-size: 1.6rem;
+    }
+
+    .main-rundown .title {
+        font-size: 1.2rem;
+    }
+
+    .rundown-section {
+        padding: 1rem;
+    }
+
+    .rundown-title {
+        font-size: 1.2rem;
+    }
+
+    .rundown-time {
+        font-size: 0.95rem;
+    }
+
+    .rundown-list ol {
+        padding-left: 1rem;
+    }
+
+    .rundown-list ol li {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Landscape mode adjustments */
+@media (max-height: 600px) and (orientation: landscape) {
+    .main-rundown .container {
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+    }
+
+    .rundown-section {
+        margin-bottom: 1.5rem;
+        padding: 1rem;
+    }
+
+    .main-rundown .title {
+        margin-bottom: 1.5rem;
+    }
+
+    .rundown-list ol li {
+        margin-bottom: 0.4rem;
+    }
+}
+
+/* Peserta Page Responsive Styles */
+@media (max-width: 992px) {
+    .main-peserta .section-title {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .main-peserta .subtitle {
+        font-size: 1.6rem;
+        line-height: 1.4;
+    }
+
+    .participants-section {
+        padding: 2rem;
+    }
+
+    .participants-list ol {
+        column-count: 2;
+        column-gap: 2rem;
+    }
+
+    .participants-list ol li {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        break-inside: avoid;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-peserta .section-title {
+        font-size: 2rem;
+    }
+
+    .main-peserta .subtitle {
+        font-size: 1.4rem;
+        line-height: 1.3;
+    }
+
+    .participants-section {
+        padding: 1.5rem;
+    }
+
+    .participants-list ol {
+        column-gap: 1.5rem;
+        padding-left: 1.5rem;
+    }
+
+    .participants-list ol li {
+        font-size: 1rem;
+        margin-bottom: 0.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-peserta .section-title {
+        font-size: 1.8rem;
+    }
+
+    .main-peserta .subtitle {
+        font-size: 1.2rem;
+        padding: 0 0.5rem;
+    }
+
+    .participants-section {
+        padding: 1.2rem;
+    }
+
+    .participants-list ol {
+        column-count: 1;
+        padding-left: 1.2rem;
+    }
+
+    .participants-list ol li {
+        font-size: 0.95rem;
+        margin-bottom: 0.7rem;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 360px) {
+    .main-peserta .section-title {
+        font-size: 1.6rem;
+    }
+
+    .main-peserta .subtitle {
+        font-size: 1.1rem;
+    }
+
+    .participants-section {
+        padding: 1rem;
+    }
+
+    .participants-list ol {
+        padding-left: 1rem;
+    }
+
+    .participants-list ol li {
+        font-size: 0.9rem;
+        margin-bottom: 0.6rem;
+    }
+}
+
+/* Landscape mode adjustments */
+@media (max-height: 600px) and (orientation: landscape) {
+    .main-peserta .container {
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+    }
+
+    .participants-section {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .participants-list ol {
+        column-count: 3;
+        column-gap: 1rem;
+    }
+
+    .participants-list ol li {
+        margin-bottom: 0.4rem;
+        font-size: 0.9rem;
+    }
+
+    .main-peserta .subtitle {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Index Page Responsive Styles */
+@media (max-width: 992px) {
+    .logo-img {
+        width: 120px;
+        height: auto;
+        margin-bottom: 2rem;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+        padding: 0 1rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-name {
+        font-size: 1.4rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .hero-date {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .open-button {
+        padding: 0.8rem 2rem;
+        font-size: 1.2rem;
+    }
+
+    .button-icon {
+        font-size: 1.4rem;
+        margin-right: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-img {
+        width: 100px;
+        margin-bottom: 1.8rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+        line-height: 1.3;
+        padding: 0 0.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.4rem;
+    }
+
+    .hero-name {
+        font-size: 1.3rem;
+    }
+
+    .hero-date {
+        font-size: 1.1rem;
+        margin-bottom: 1.8rem;
+    }
+
+    .open-button {
+        padding: 0.7rem 1.8rem;
+        font-size: 1.1rem;
+    }
+
+    .button-icon {
+        font-size: 1.3rem;
+        margin-right: 0.7rem;
+    }
+
+    .hero-content {
+        padding: 2rem 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo-img {
+        width: 90px;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+        padding: 0 0.5rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .hero-name {
+        font-size: 1.2rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .hero-date {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        padding: 0 0.5rem;
+    }
+
+    .open-button {
+        padding: 0.6rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .button-icon {
+        font-size: 1.2rem;
+        margin-right: 0.6rem;
+    }
+
+    .hero-content {
+        padding: 1.5rem 0.8rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .logo-img {
+        width: 80px;
+        margin-bottom: 1.2rem;
+    }
+
+    .hero-title {
+        font-size: 1.6rem;
+        padding: 0 0.3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .hero-name {
+        font-size: 1.1rem;
+    }
+
+    .hero-date {
+        font-size: 0.9rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .open-button {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .button-icon {
+        font-size: 1.1rem;
+        margin-right: 0.5rem;
+    }
+
+    .hero-content {
+        padding: 1.2rem 0.5rem;
+    }
+}
+
+/* Landscape mode adjustments */
+@media (max-height: 600px) and (orientation: landscape) {
+    .logo-img {
+        width: 80px;
+        margin-bottom: 1rem;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.3rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .hero-name {
+        font-size: 1.2rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .hero-date {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-content {
+        padding: 1rem;
+    }
+
+    .open-button {
+        padding: 0.5rem 1.5rem;
+    }
+}
+
+/* Fix for very tall screens */
+@media (min-height: 800px) {
+    .hero-content {
+        padding: 3rem 1.5rem;
+    }
+
+    .logo-img {
+        margin-bottom: 2.5rem;
+    }
+}
+
+/* Audio Control Styles */
+.audio-control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.audio-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--gradient-dark);
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.audio-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.audio-button.playing {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Responsive audio button */
+@media (max-width: 768px) {
+    .audio-control {
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .audio-button {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .audio-control {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .audio-button {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Audio Control Styles */
+.audio-control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.audio-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3A2718, #8B4513);
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.audio-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.audio-button.playing {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Responsive audio button */
+@media (max-width: 768px) {
+    .audio-control {
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .audio-button {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .audio-control {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .audio-button {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Index Page Font Responsive Styles */
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 2.5rem;
+        line-height: 1.3;
+    }
+
+    .hero-subtitle {
+        font-size: 1.8rem;
+    }
+
+    .hero-name {
+        font-size: 1.5rem;
+    }
+
+    .hero-date {
+        font-size: 1.3rem;
+    }
+
+    .open-button {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.2rem;
+        line-height: 1.25;
+    }
+
+    .hero-subtitle {
+        font-size: 1.6rem;
+    }
+
+    .hero-name {
+        font-size: 1.4rem;
+    }
+
+    .hero-date {
+        font-size: 1.2rem;
+    }
+
+    .open-button {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+
+    .hero-subtitle {
+        font-size: 1.4rem;
+    }
+
+    .hero-name {
+        font-size: 1.2rem;
+    }
+
+    .hero-date {
+        font-size: 1rem;
+    }
+
+    .open-button {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .hero-name {
+        font-size: 1.1rem;
+    }
+
+    .hero-date {
+        font-size: 0.9rem;
+    }
+
+    .open-button {
+        font-size: 0.9rem;
+    }
+}
+
+/* Landscape mode font adjustments */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero-title {
+        font-size: 1.6rem;
+        line-height: 1.2;
+    }
+
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+
+    .hero-name {
+        font-size: 1.1rem;
+    }
+
+    .hero-date {
+        font-size: 0.95rem;
+    }
+
+    .open-button {
+        font-size: 0.95rem;
+    }
+}
+
+/* Title Styles */
+.title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    line-height: 1.4;
+    margin-bottom: 2rem;
+    color: var(--gradient-dark);
+    text-align: center;
+    font-weight: 600;
+    background: linear-gradient(135deg, #3A2718, #8B4513);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Title Responsive Styles */
+@media (max-width: 1200px) {
+    .title {
+        font-size: 2.5rem;
+        line-height: 1.35;
+        margin-bottom: 1.8rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .title {
+        font-size: 2.2rem;
+        line-height: 1.3;
+        margin-bottom: 1.5rem;
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 1.8rem;
+        line-height: 1.25;
+        margin-bottom: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .title {
+        font-size: 1.5rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+        padding: 0 0.5rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .title {
+        font-size: 1.3rem;
+        line-height: 1.15;
+        margin-bottom: 0.8rem;
+    }
+}
+
+/* Landscape mode adjustments */
+@media (max-height: 600px) and (orientation: landscape) {
+    .title {
+        font-size: 1.6rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+}

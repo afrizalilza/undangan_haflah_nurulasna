@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Susunan Acara - Haflah Akhirossanah & Khotmul Qur'an</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="main-rundown">
+    <!-- Audio Control -->
+    <div class="audio-control">
+        <button id="audioButton" class="audio-button">
+            <i class="fas fa-music"></i>
+        </button>
+    </div>
+    <audio id="bgMusic" preload="auto">
+        <source src="assets/sound/sound.mp3" type="audio/mp3">
+    </audio>
+    <div class="nav-buttons mt-5" data-aos="fade-up" data-aos-delay="300">
+        <a href="main_pembuka.html" class="nav-button">
+            <i class="fas fa-home button-icon"></i>
+        </a>
+        <a href="main_rundown.html" class="nav-button">
+            <i class="fas fa-list-ul button-icon"></i>
+        </a>
+        <a href="main_peserta.html" class="nav-button">
+            <i class="fas fa-users button-icon"></i>
+        </a>
+    </div>
+    <div class="ornament ornament-top-left"></div>
+    <div class="ornament ornament-top-right"></div>
+    <div class="ornament ornament-bottom-left"></div>
+    <div class="ornament ornament-bottom-right"></div>
+
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="text-center mb-5" data-aos="fade-down">
+                    <h1 class="section-title">Susunan Acara</h1>
+                    <h1 class="title">
+                        Haflah Akhirossanah & Khotmul Qur'an Ke-12 <br>
+                        Pondok Pesantren Nurul Asna
+                    </h1>
+                </div>
+
+              
+                <div class="rundown-section" data-aos="fade-up">
+                    <h3 class="rundown-title">Acara Pra-Haflah</h3>
+                    <p class="rundown-time">Pukul 16.00 - 17.30 WIB</p>
+                    <div class="rundown-list">
+                        <ol>
+                            <li data-aos="fade-right" data-aos-delay="100">Rebana</li>
+                            <li data-aos="fade-right" data-aos-delay="200">Muchafadzoh Kitab Salaf</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="rundown-section" data-aos="fade-up">
+                    <h3 class="rundown-title">Acara Utama</h3>
+                    <p class="rundown-time">Pukul 19.30 WIB - Selesai</p>
+                    <div class="rundown-list">
+                        <ol>
+                            <li data-aos="fade-right" data-aos-delay="100">Pembukaan</li>
+                            <li data-aos="fade-right" data-aos-delay="150">Tilawatul Qur'an</li>
+                            <li data-aos="fade-right" data-aos-delay="200">Khotmul Qur'an dan Bacaan Tahlil</li>
+                            <li data-aos="fade-right" data-aos-delay="250">Istirahat</li>
+                            <li data-aos="fade-right" data-aos-delay="300">Sambutan-Sambutan</li>
+                            <li data-aos="fade-right" data-aos-delay="350">Mauidzoh Hasanah</li>
+                            <li data-aos="fade-right" data-aos-delay="400">Penutup dan Do'a</li>
+                        </ol>
+                    </div>
+                </div>
+
+           
+               
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/audio-control.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+</body>
+</html>
